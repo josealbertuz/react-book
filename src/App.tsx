@@ -1,6 +1,8 @@
+import { Switch } from "./components/Switch/Switch"
+
 function App() {
   return (
-    <h1>React book app!</h1>
+    <Switch label="¿Funciona?" />
   )
 }
 
