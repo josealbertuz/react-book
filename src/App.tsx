@@ -1,9 +1,5 @@
-import { Switch } from "components/Switch"
-
 function App() {
-  return (
-    <Switch label="¿Funciona?" />
-  )
+  return <></>
 }
 
 export default App
