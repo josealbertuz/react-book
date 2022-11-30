@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Marquee } from "./components/Marquee";
 import { Select } from "./components/Select";
 import { SelectOption } from "./components/Select/Select";
 import "./index.css";
@@ -16,6 +17,18 @@ const OPTIONS: SelectOption<number>[] = [
   { label: "Ten", value: 10 },
 ];
 
+const ITEMS: JSX.Element[] = [
+  <span>Sprigatito</span>,
+  <span>Floragato</span>,
+  <span>Meowscarada</span>,
+  <span>Fuecoco</span>,
+  <span>Crocalor</span>,
+  <span>Skeledirge</span>,
+  <span>Quaxly</span>,
+  <span>Quaxwell</span>,
+  <span>Quaquaval</span>,
+];
+
 function App() {
   const [selectValue, setSelectValue] = useState(0);
 
@@ -23,15 +36,18 @@ function App() {
     OPTIONS.find(({ value: option }) => option === value)?.label ?? "";
 
   return (
-    <Select
-      label="Numbers"
-      value={selectValue}
-      options={OPTIONS}
-      onChange={setSelectValue}
-      onClear={() => setSelectValue(0)}
-      displayFormatter={displayFormatter}
-      isSelected={(value) => value === selectValue}
-    />
+    <div>
+      <Select
+        label="Numbers"
+        value={selectValue}
+        options={OPTIONS}
+        onChange={setSelectValue}
+        onClear={() => setSelectValue(0)}
+        displayFormatter={displayFormatter}
+        isSelected={(value) => value === selectValue}
+      />
+      <Marquee items={ITEMS} />
+    </div>
   );
 }
 
