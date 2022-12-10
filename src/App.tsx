@@ -1,8 +1,10 @@
-import { useState } from "react";
-import { Marquee } from "./components/Marquee";
-import { Select } from "./components/Select";
+import "styles/index.css";
+
+import { Marquee } from "components/Marquee";
+import { Select } from "components/Select";
 import { SelectOption } from "./components/Select/Select";
-import "./index.css";
+import { useState } from "react";
+import { Collapsible } from "components/Collapsible";
 
 const OPTIONS: SelectOption<number>[] = [
   { label: "One", value: 1 },
@@ -47,6 +49,9 @@ function App() {
         isSelected={(value) => value === selectValue}
       />
       <Marquee items={ITEMS} />
+      <Collapsible trigger={<span>Collapsible trigger</span>}>
+        <div style={{ border: '1px solid black', height: '500px' }}>Collapsible content</div>
+      </Collapsible>
     </div>
   );
 }
