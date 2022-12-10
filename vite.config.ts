@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -21,7 +21,8 @@ export default defineConfig({
       "components": "/src/components",
       "hooks": "/src/hooks",
       "assets": "/src/assets",
-      "test": "/src/test"
+      "test": "/src/test",
+      "styles": "/src/styles"
     },
   },
 });
