@@ -5,6 +5,7 @@ import { Select } from "components/Select";
 import { SelectOption } from "./components/Select/Select";
 import { useState } from "react";
 import { Collapsible } from "components/Collapsible";
+import { RangeSlider } from "./components/RangeSlider";
 
 const OPTIONS: SelectOption<number>[] = [
   { label: "One", value: 1 },
@@ -52,6 +53,7 @@ function App() {
       <Collapsible trigger={<span>Collapsible trigger</span>}>
         <div style={{ border: '1px solid black', height: '500px' }}>Collapsible content</div>
       </Collapsible>
+      <RangeSlider min={0} max={100} onChange={() => {}} />
     </div>
   );
 }
