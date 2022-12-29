@@ -3,7 +3,6 @@ import {
   ControlWrapper,
   InnerRail,
   Input,
-  InputWrapper,
   Rail,
   RangeSliderRoot,
   Thumb,
