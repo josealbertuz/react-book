@@ -6,6 +6,7 @@ import { SelectOption } from "./components/Select/Select";
 import { useState } from "react";
 import { Collapsible } from "components/Collapsible";
 import { RangeSlider } from "./components/RangeSlider";
+import { Badge } from "./components/Badge";
 
 const OPTIONS: SelectOption<number>[] = [
   { label: "One", value: 1 },
@@ -34,6 +35,7 @@ const ITEMS: JSX.Element[] = [
 
 function App() {
   const [selectValue, setSelectValue] = useState(0);
+  const [newMessages, setNewMessages] = useState(0);
 
   const displayFormatter = (value?: number) =>
     OPTIONS.find(({ value: option }) => option === value)?.label ?? "";
@@ -51,9 +53,19 @@ function App() {
       />
       <Marquee items={ITEMS} />
       <Collapsible trigger={<span>Collapsible trigger</span>}>
-        <div style={{ border: '1px solid black', height: '500px' }}>Collapsible content</div>
+        <div style={{ border: "1px solid black", height: "500px" }}>
+          Collapsible content
+        </div>
       </Collapsible>
       <RangeSlider min={0} max={100} onChange={() => {}} />
+      <div style={{ padding: "100px" }}>
+        <Badge>
+          <span>New messages</span>
+        </Badge>
+        <button onClick={() => setNewMessages(newMessages + 1)}>
+          increment
+        </button>
+      </div>
     </div>
   );
 }
