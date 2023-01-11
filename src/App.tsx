@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Collapsible } from "components/Collapsible";
 import { RangeSlider } from "./components/RangeSlider";
 import { Badge } from "./components/Badge";
+import { Drawer } from "./components/Drawer";
 
 const OPTIONS: SelectOption<number>[] = [
   { label: "One", value: 1 },
@@ -36,13 +37,14 @@ const ITEMS: JSX.Element[] = [
 function App() {
   const [selectValue, setSelectValue] = useState(0);
   const [newMessages, setNewMessages] = useState(0);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const displayFormatter = (value?: number) =>
     OPTIONS.find(({ value: option }) => option === value)?.label ?? "";
 
   return (
     <div>
-      <Select
+      {/* <Select
         label="Numbers"
         value={selectValue}
         options={OPTIONS}
@@ -65,7 +67,17 @@ function App() {
         <button onClick={() => setNewMessages(newMessages + 1)}>
           increment
         </button>
-      </div>
+      </div> */}
+
+      <Drawer isOpen={openDrawer} onClose={() => {}}>
+        <ul>
+          <li>element 1</li>
+          <li>element 2</li>
+          <li>element 3</li>
+          <button onClick={() => setOpenDrawer(false)}>close drawer</button>
+        </ul>
+      </Drawer>
+      <button onClick={() => setOpenDrawer(true)}>open drawer</button>
     </div>
   );
 }

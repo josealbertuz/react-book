@@ -1,1 +1,1 @@
-import { Portal } from './Portal'
+export { Portal } from './Portal'
