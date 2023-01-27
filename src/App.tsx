@@ -8,6 +8,7 @@ import { Collapsible } from "components/Collapsible";
 import { RangeSlider } from "./components/RangeSlider";
 import { Badge } from "./components/Badge";
 import { Drawer } from "./components/Drawer";
+import { TextField } from "components/TextField";
 
 const OPTIONS: SelectOption<number>[] = [
   { label: "One", value: 1 },
@@ -69,7 +70,7 @@ function App() {
         </button>
       </div> */}
 
-      <Drawer isOpen={openDrawer} onClose={() => {}}>
+      {/* <Drawer isOpen={openDrawer} onClose={() => {}}>
         <ul>
           <li>element 1</li>
           <li>element 2</li>
@@ -77,7 +78,8 @@ function App() {
           <button onClick={() => setOpenDrawer(false)}>close drawer</button>
         </ul>
       </Drawer>
-      <button onClick={() => setOpenDrawer(true)}>open drawer</button>
+      <button onClick={() => setOpenDrawer(true)}>open drawer</button> */}
+      <TextField label="Name" placeholder="Type your name" />
     </div>
   );
 }
