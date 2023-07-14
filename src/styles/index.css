@@ -9,5 +9,8 @@ html {
 body {
     margin: 0;
     height: 100%;
-    padding: 1em;
+}
+
+#root {
+  height: 100%;
 }
