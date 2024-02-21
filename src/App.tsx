@@ -8,6 +8,7 @@ import { Collapsible } from "components/Collapsible";
 import { RangeSlider } from "./components/RangeSlider";
 import { Badge } from "./components/Badge";
 import { Drawer } from "./components/Drawer";
+import { TinderCards } from "./components/TinderCards";
 
 const OPTIONS: SelectOption<number>[] = [
   { label: "One", value: 1 },
@@ -41,6 +42,12 @@ function App() {
 
   const displayFormatter = (value?: number) =>
     OPTIONS.find(({ value: option }) => option === value)?.label ?? "";
+
+  return (
+    <div style={{display: 'grid', minHeight: '100%', placeItems: 'center'}}>
+      <TinderCards />
+    </div>
+  );
 
   return (
     <div>

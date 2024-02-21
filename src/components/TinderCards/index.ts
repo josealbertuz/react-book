@@ -1,0 +1,1 @@
+export { TinderCards } from "./TinderCards";
