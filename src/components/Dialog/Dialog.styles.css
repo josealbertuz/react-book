@@ -1,0 +1,49 @@
+@keyframes scale-down {
+    from { transform: scale(1) }
+    to { transform: scale(.75) }
+  }
+  
+  @keyframes slide-in-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .dialog {
+    display: grid;
+    border-radius: 12px;
+    max-inline-size: min(90vw, 100%);
+    max-block-size: min(80vh, 100%);
+    max-block-size: min(80dvh, 100%);
+    overflow: hidden;
+    margin: auto;
+    padding: 0;
+    position: fixed;
+    inset: 0;
+    transition: opacity 0.5s ease;
+    animation: scale-down 0.5s ease forwards;
+  }
+  
+  .dialog[open] {
+    animation: slide-in-up 0.5s ease forwards;
+  }
+  
+  .dialog::backdrop {
+    backdrop-filter: blur(25px);
+    transition: backdrop-filter 0.5s ease;
+    background-color: transparent;
+  }
+  
+  .dialog:not([open]) {
+    pointer-events: none;
+    opacity: 0;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }

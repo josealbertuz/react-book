@@ -3,12 +3,13 @@ import "styles/index.css";
 import { Marquee } from "components/Marquee";
 import { Select } from "components/Select";
 import { SelectOption } from "./components/Select/Select";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Collapsible } from "components/Collapsible";
 import { RangeSlider } from "./components/RangeSlider";
 import { Badge } from "./components/Badge";
 import { Drawer } from "./components/Drawer";
 import { TinderCards } from "./components/TinderCards";
+import { Dialog } from "./components/Dialog";
 
 const OPTIONS: SelectOption<number>[] = [
   { label: "One", value: 1 },
@@ -39,14 +40,25 @@ function App() {
   const [selectValue, setSelectValue] = useState(0);
   const [newMessages, setNewMessages] = useState(0);
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
 
   const displayFormatter = (value?: number) =>
     OPTIONS.find(({ value: option }) => option === value)?.label ?? "";
 
+  const ref = useRef<HTMLDialogElement>(null);
+
+  console.log({openDialog})
+
   return (
-    <div style={{display: 'grid', minHeight: '100%', placeItems: 'center'}}>
-      <TinderCards />
-    </div>
+    <>
+      <Dialog asModal open={openDialog} onOpenChange={setOpenDialog}>
+        <div style={{ padding: "1em" }}>
+          <h1>dialog content!</h1>
+          <button onClick={() => setOpenDialog(false)}>close</button>
+        </div>
+      </Dialog>
+      <button onClick={() => setOpenDialog(true)}>open</button>
+    </>
   );
 
   return (
