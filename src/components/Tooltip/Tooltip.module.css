@@ -1,0 +1,30 @@
+.tooltipPopover {
+  display: grid;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transform-origin: bottom center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tooltipPopover:not(:popover-open){
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.tooltipPortal {
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: bottom center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tooltipPortal[data-state="false"] {
+  opacity: 0;
+  pointer-events: none;
+}
